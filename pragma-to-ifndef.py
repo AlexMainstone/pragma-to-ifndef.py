@@ -4,9 +4,7 @@ path = input(":>")
 
 for file in os.listdir(path):
     if file.endswith(".h") or file.endswith(".hpp"):
-        deftitle = file
-        deftitle = deftitle.replace(".", "_") + "_"
-        deftitle = deftitle.upper()
+        deftitle = file.replace(".", "_").upper() + "_"
 
         # remove "#pragma once" and add the ifndef
         with open(path + "/" + file, 'r') as fin:
